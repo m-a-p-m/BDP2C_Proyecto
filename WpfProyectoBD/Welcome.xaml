@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfProyectoBD.Welcome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProyectoBD"
+        mc:Ignorable="d"
+        Title="Welcome" Icon="/img/logo.png" WindowStartupLocation="CenterScreen" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/bgVapor.jpg" Opacity="0.8"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label x:Name="lblLOGIN"
+                   Content="B I E N V E N I D O"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnCERRAR"
+                        Content=" c e r r a r  s e s i o n " Click="btnCERRAR_Click"/>
+                <Button x:Name="btnVISTAUSUARIO"
+                        Content=" v e n t a n a  d e  u s u a r i o " Click="btnVISTAUSUARIO_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

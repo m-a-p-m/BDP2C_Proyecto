@@ -1,0 +1,51 @@
+﻿<Window x:Class="WpfProyectoBD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProyectoBD"
+        mc:Ignorable="d"
+        Title="LOGIN SYSTEM" Height="600" Width="800"
+        Icon="/img/logo.png"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/bgVapor.jpg" Opacity="0.8"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Label x:Name="lblMensaje"
+                       Content=""
+                       Grid.Row="1"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Height="310" Width="315">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                </Image.Source>
+            </Image>
+            <Label x:Name="lblLOGIN"
+                   Content="L O G  I N"/>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblEMAIL"
+                       Content="e m a i l : "/>
+                <TextBox x:Name="TxtEMAIL" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblCONTRA"
+                       Content="c o n t r a s e ñ a : "/>
+                <PasswordBox x:Name="pwdCONTRA" Width="200"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnENTRAR"
+                        Content=" i n i c i a r  s e s i o n " Click="btnENTRAR_Click"/>
+                <Button x:Name="btnREGISTRARSE"
+                        Content=" r e g i s t r a r s e " Click="btnREGISTRARSE_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

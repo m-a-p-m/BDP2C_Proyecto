@@ -1,0 +1,78 @@
+﻿<Window x:Class="WpfProyectoBD.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProyectoBD"
+        mc:Ignorable="d"
+        Title="UserWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/bgVapor.jpg" Opacity="0.8"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Background="#9500ff" Width="800">
+            <Image Height="29" Width="34">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                </Image.Source>
+            </Image>
+            <Button x:Name="lblMenu"
+                   Content="v a p o r  ltd."
+                   FontSize="8"/>
+            <Button x:Name="lblSobre"
+                  Content="u b i c a c i o n e s"
+                  FontSize="8"/>
+            <Button x:Name="lblProd"
+                  Content="p r o d u c t o s."
+                  FontSize="8"/>
+            <Button x:Name="lblAdmin"
+                  Content="a d m i n"
+                  FontSize="8" Click="lblAdmin_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Image Height="135" Width="272">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                </Image.Source>
+            </Image>
+            <Label x:Name="lblLOGIN"
+                   Content="V A P O R  LTD."/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Background="#9500ff">
+            <Label x:Name="lblCARRU"
+                   Content="compre nuestros productos: "/>
+            <StackPanel Orientation="Horizontal">
+                <Image Height="121" Width="204">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                    </Image.Source>
+                </Image>
+                <Image Height="121" Width="204">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                    </Image.Source>
+                </Image>
+                <Image Height="121" Width="204">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                    </Image.Source>
+                </Image>
+                <Image Height="121" Width="204">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                    </Image.Source>
+                </Image>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
