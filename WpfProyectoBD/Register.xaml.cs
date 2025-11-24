@@ -38,12 +38,27 @@ namespace WpfProyectoBD
                 return;
             }
 
+            if (!Regex.IsMatch(txtNOM.Text.Trim(), @"^[\p{L}\s]+$"))
+            {
+                lblMensaje.Content = "El nombre solo puede contener letras y espacios.";
+                lblMensaje.Foreground = Brushes.Red;
+                return;
+            }
+
+            if (pwdCONTRA.Password.Length <= 2)
+            {
+                lblMensaje.Content = "La contraseña debe tener más de 2 caracteres.";
+                lblMensaje.Foreground = Brushes.Red;
+                return;
+            }
+
             if (!Regex.IsMatch(TxtEMAIL.Text.Trim(), @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 lblMensaje.Content = "Ingrese una dirección de correo válida.";
                 lblMensaje.Foreground = Brushes.Red;
                 return;
             }
+
             string datosParaGuardar = $"{txtNOM.Text}|{TxtEMAIL.Text}|{pwdCONTRA.Password}{Environment.NewLine}";
 
             try
@@ -72,7 +87,6 @@ namespace WpfProyectoBD
             MainWindow login = new MainWindow();
             login.Show();
             this.Close();
-
         }
     }
 }

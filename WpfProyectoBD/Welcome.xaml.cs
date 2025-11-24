@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,17 +13,80 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace WpfProyectoBD
 {
-    /// <summary>
-    /// Lógica de interacción para Welcome.xaml
-    /// </summary>
     public partial class Welcome : Window
     {
+        public ObservableCollection<Producto> ListaProd { get; set; }
+        public Producto prodSel { get; set; }
+
+        private readonly string rutaArchLogin = "C:\\signupPrueba\\productos.txt";
+
         public Welcome()
         {
             InitializeComponent();
+
+            ListaProd = new ObservableCollection<Producto>();
+            CargarProductos();
+
+            DataContext = this;
+            lstProd.ItemsSource = ListaProd;
+        }
+
+        private void CargarProductos()
+        {
+            if (File.Exists(rutaArchLogin))
+            {
+                try
+                {
+                    string[] lineas = File.ReadAllLines(rutaArchLogin);
+                    foreach (string linea in lineas)
+                    {
+                        string[] partes = linea.Split('|');
+                        if (partes.Length == 2)
+                        {
+                            string nombre = partes[0];
+                            if (double.TryParse(partes[1], out double precio))
+                            {
+                                ListaProd.Add(new Producto(nombre, precio));
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error de Carga", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                ListaProd.Add(new Producto("FRIGIDER", 3450.80));
+                ListaProd.Add(new Producto("REFRIGERADOR", 5300));
+
+                GuardarProductos();
+            }
+        }
+
+        private void GuardarProductos()
+        {
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(rutaArchLogin));
+
+                StringBuilder sb = new StringBuilder();
+                foreach (Producto p in ListaProd)
+                {
+                    sb.AppendLine($"{p.NomProd}|{p.PrecProd}");
+                }
+
+                File.WriteAllText(rutaArchLogin, sb.ToString(), Encoding.UTF8);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar los productos: {ex.Message}", "Error de Guardado", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnCERRAR_Click(object sender, RoutedEventArgs e)
@@ -34,6 +99,55 @@ namespace WpfProyectoBD
             UserWindow usrWin = new UserWindow();
             usrWin.Show();
             this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (prodSel != null)
+            {
+                ListaProd.Remove(prodSel);
+                GuardarProductos();
+
+                txtPrecio.Clear();
+                txtProducto.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un producto para eliminar.", "Advertencia");
+            }
+        }
+
+        private void btnAgregar_Click(object sender, RoutedEventArgs e)
+        {
+            string nombre = txtProducto.Text.Trim();
+
+            if (!double.TryParse(txtPrecio.Text, out double prec))
+            {
+                MessageBox.Show("ERROR: El precio ingresado no es un número válido.", "Error de Entrada");
+                return;
+            }
+
+            if (prec > 0 && nombre != "")
+            {
+                ListaProd.Add(new Producto(nombre, prec));
+                GuardarProductos();
+
+                txtPrecio.Clear();
+                txtProducto.Clear();
+            }
+            else
+            {
+                MessageBox.Show("ERROR: EL PRECIO DEBE SER MAYOR A CERO, O EL NOMBRE ES VACIO. PONGA ALGO MAS BOL*** >:V", "Error de Validación");
+            }
+        }
+
+        private void lstProd_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (prodSel != null)
+            {
+                txtProducto.Text = prodSel.NomProd;
+                txtPrecio.Text = prodSel.PrecProd.ToString();
+            }
         }
     }
 }
