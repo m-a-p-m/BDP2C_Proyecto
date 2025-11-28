@@ -22,30 +22,35 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="3" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label x:Name="lblLOGIN"
                    Content="B I E N V E N I D O"/>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="btnCERRAR"
                         Content=" c e r r a r  s e s i o n " Click="btnCERRAR_Click"/>
                 <Button x:Name="btnVISTAUSUARIO"
-                        Content=" v e n t a n a  d e  u s u a r i o " Click="btnVISTAUSUARIO_Click"/>
+                        Content=" u s u a r i o " Click="btnVISTAUSUARIO_Click"/>
+                <Button x:Name="btnSOLICITUDES"
+                        Content=" s o l i c i t u d e s " Click="btnSOLICITUDES_Click"/>
             </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Row="2"
-                    Grid.ColumnSpan="2">
+                    Grid.ColumnSpan="3">
             <Label x:Name="lblLstProd"
                    Content="Lista de Productos: "/>
             <ListBox x:Name="lstProd" Height="150" ItemsSource="{Binding ListaProd}" SelectedItem="{Binding prodSel}" SelectionChanged="lstProd_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="{Binding NomProd}"/>
-                            <Label Content=" - "/>
-                            <Label Content="{Binding PrecProd}"/>
+                            <Label Content="{Binding NomProd}" Foreground="Black"/>
+                            <Label Content=" - " Foreground="Black"/>
+                            <Label Content="{Binding PrecProd}" Foreground="Black"/>
+                            <Label Content=" - " Foreground="Black"/>
+                            <Label Content="{Binding CatProd}" Foreground="Black"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -54,34 +59,51 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="3">
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center">
             <Label x:Name="lblProducto"
-               Content="Producto"/>
+           Content="Producto" 
+           HorizontalContentAlignment="Center"/>
             <TextBox x:Name="txtProducto"
-                     Text="{Binding prodSel.NomProd, Mode=TwoWay}"
-                     Width="400"
-                     Height="40"
-                     Margin="5"/>
+             Foreground="Black"
+             Text="{Binding prodSel.NomProd, Mode=TwoWay}"
+             Width="200"
+             Height="30"
+             Margin="5"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="3">
+        <StackPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center">
             <Label x:Name="lblPrecio"
-               Content="Precio"/>
+           Content="Precio" 
+           HorizontalContentAlignment="Center"/>
             <TextBox x:Name="txtPrecio"
-                     Text="{Binding prodSel.PrecProd, Mode=TwoWay}"
-                     Width="400"
-                     Height="40"
-                     Margin="5"/>
+             Foreground="Black"
+             Text="{Binding prodSel.PrecProd, Mode=TwoWay}"
+             Width="200"
+             Height="30"
+             Margin="5"/>
         </StackPanel>
 
-        <Button x:Name="btnEliminar"
-                Grid.Row="4"
-                Content="Eliminar Producto >:(" Click="btnEliminar_Click"/>
+        <StackPanel Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center">
+            <Label x:Name="lblCategoria"
+           Content="Categoria" 
+           HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="txtCategoria"
+             Foreground="Black"
+             Text="{Binding prodSel.CatProd, Mode=TwoWay}"
+             Width="200"
+             Height="30"
+             Margin="5"/>
+        </StackPanel>
 
-        <Button x:Name="btnAgregar"
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Grid.ColumnSpan="3" Margin="163,70,103,0" Grid.RowSpan="2">
+            <Button x:Name="btnEliminar"
+                Content=" Eliminar Producto " Click="btnEliminar_Click"/>
+
+            <Button x:Name="btnAgregar"
                 Grid.Row="4"
-                Grid.Column="1"
-                Content="Agregar Producto >:)" Click="btnAgregar_Click"/>
+                Grid.Column="2"
+                Content=" Agregar Producto " Click="btnAgregar_Click"/>
+        </StackPanel>
 
     </Grid>
 </Window>

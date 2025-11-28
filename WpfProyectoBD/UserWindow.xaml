@@ -14,6 +14,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
@@ -23,16 +24,16 @@
                     <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
                 </Image.Source>
             </Image>
-            <Button x:Name="lblMenu"
+            <Button x:Name="btnMenu"
                    Content="v a p o r  ltd."
                    FontSize="8"/>
-            <Button x:Name="lblSobre"
+            <Button x:Name="btnSobre"
                   Content="u b i c a c i o n e s"
                   FontSize="8"/>
-            <Button x:Name="lblProd"
+            <Button x:Name="btnProd"
                   Content="p r o d u c t o s."
                   FontSize="8"/>
-            <Button x:Name="lblAdmin"
+            <Button x:Name="btnAdmin"
                   Content="a d m i n"
                   FontSize="8" Click="lblAdmin_Click"/>
         </StackPanel>
@@ -73,6 +74,10 @@
                 </Image>
             </StackPanel>
         </StackPanel>
+
+        <Button x:Name="btnSOLICITUD"
+                Grid.Row="3"
+                Content="h a c e r  s o l i c i t u d" Click="btnSOLICITUD_Click"/>
 
     </Grid>
 </Window>

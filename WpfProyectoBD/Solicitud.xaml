@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfProyectoBD.Solicitud"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProyectoBD"
+        mc:Ignorable="d"
+        Title="Solicitud" Height="380" Width="400"
+        Icon="/img/logo.png"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/bgVapor.jpg" Opacity="0.8"></ImageBrush>
+        </Grid.Background>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <Image Height="100" Width="114">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                </Image.Source>
+            </Image>
+            <Label x:Name="lblSolicitud"
+                   Content="¡Haga su solicitud!"/>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblNombre"
+                       Content="NOMBRE:"/>
+                <TextBox x:Name="txtNombre" Width="200"/>
+            </StackPanel>
+            <TextBox x:Name="txtSolicitud" Width="350" Height="100" Margin="10" VerticalContentAlignment="Top" TextWrapping="Wrap"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnENVSOLICITUD"
+                    Content=" e n v i a r " Click="btnENVSOLICITUD_Click"/>
+                <Button x:Name="btnLMPSOLICITUD"
+                    Content=" l i m p i a r " Click="btnLMPSOLICITUD_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

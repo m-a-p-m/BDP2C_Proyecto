@@ -59,6 +59,12 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Solicitud.xaml.cs">
+      <DependentUpon>Solicitud.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesRecibidas.xaml.cs">
+      <DependentUpon>SolicitudesRecibidas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
@@ -78,6 +84,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Solicitud.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SolicitudesRecibidas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

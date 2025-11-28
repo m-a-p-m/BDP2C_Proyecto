@@ -26,13 +26,17 @@
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="FontFamily" Value="MS Gothic"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
         </Style>
         <Style TargetType="PasswordBox">
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="FontFamily" Value="MS Gothic"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Foreground" Value="Black"/>
         </Style>
     </Application.Resources>
 </Application>

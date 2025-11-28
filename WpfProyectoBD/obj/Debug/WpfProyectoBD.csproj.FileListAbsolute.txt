@@ -21,3 +21,7 @@ C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\Register.baml
 C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\Welcome.baml
 C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\UserWindow.g.cs
 C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\UserWindow.baml
+C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\Solicitud.g.cs
+C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\Solicitud.baml
+C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\SolicitudesRecibidas.g.cs
+C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\SolicitudesRecibidas.baml

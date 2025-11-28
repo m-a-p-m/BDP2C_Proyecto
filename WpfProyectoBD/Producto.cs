@@ -12,23 +12,27 @@ public class Producto
         public string NomProd { get; set; }
         public double PrecProd { get; set; }
 
+        public string CatProd { get; set; }
+
         //CONSTRUCTORES
         public Producto()
         {
             NomProd = "NO DEFINIDO >:V";
             PrecProd = 0;
+            CatProd = "NO DEFINIDO";
         }
 
-        public Producto(string nom, double prc)
+        public Producto(string nom, double prc, string cat)
         {
             NomProd = nom;
             PrecProd = prc;
+            CatProd = cat;
         }
 
         //FUNCIONALIDAD
         public string verDatos()
         {
-            return (NomProd + "" + PrecProd.ToString());
+            return (NomProd + "" + PrecProd.ToString() + "" + CatProd);
         }
     }
 }

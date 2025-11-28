@@ -45,12 +45,13 @@ namespace WpfProyectoBD
                     foreach (string linea in lineas)
                     {
                         string[] partes = linea.Split('|');
-                        if (partes.Length == 2)
+                        if (partes.Length == 3)
                         {
                             string nombre = partes[0];
+                            string categoria = partes[2];
                             if (double.TryParse(partes[1], out double precio))
                             {
-                                ListaProd.Add(new Producto(nombre, precio));
+                                ListaProd.Add(new Producto(nombre, precio, categoria));
                             }
                         }
                     }
@@ -62,8 +63,8 @@ namespace WpfProyectoBD
             }
             else
             {
-                ListaProd.Add(new Producto("FRIGIDER", 3450.80));
-                ListaProd.Add(new Producto("REFRIGERADOR", 5300));
+                ListaProd.Add(new Producto("FRIGIDER", 3450.80, ""));
+                ListaProd.Add(new Producto("REFRIGERADOR", 5300, ""));
 
                 GuardarProductos();
             }
@@ -78,7 +79,7 @@ namespace WpfProyectoBD
                 StringBuilder sb = new StringBuilder();
                 foreach (Producto p in ListaProd)
                 {
-                    sb.AppendLine($"{p.NomProd}|{p.PrecProd}");
+                    sb.AppendLine($"{p.NomProd}|{p.PrecProd}|{p.CatProd}");
                 }
 
                 File.WriteAllText(rutaArchLogin, sb.ToString(), Encoding.UTF8);
@@ -110,6 +111,7 @@ namespace WpfProyectoBD
 
                 txtPrecio.Clear();
                 txtProducto.Clear();
+                txtCategoria.Clear();
             }
             else
             {
@@ -120,6 +122,7 @@ namespace WpfProyectoBD
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             string nombre = txtProducto.Text.Trim();
+            string categoria = txtCategoria.Text.Trim();
 
             if (!double.TryParse(txtPrecio.Text, out double prec))
             {
@@ -129,11 +132,12 @@ namespace WpfProyectoBD
 
             if (prec > 0 && nombre != "")
             {
-                ListaProd.Add(new Producto(nombre, prec));
+                ListaProd.Add(new Producto(nombre, prec, categoria));
                 GuardarProductos();
 
                 txtPrecio.Clear();
                 txtProducto.Clear();
+                txtCategoria.Clear();
             }
             else
             {
@@ -147,7 +151,13 @@ namespace WpfProyectoBD
             {
                 txtProducto.Text = prodSel.NomProd;
                 txtPrecio.Text = prodSel.PrecProd.ToString();
+                txtCategoria.Text = prodSel.CatProd;
             }
+        }
+
+        private void btnSOLICITUDES_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

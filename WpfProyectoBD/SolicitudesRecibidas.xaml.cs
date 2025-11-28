@@ -15,24 +15,13 @@ using System.Windows.Shapes;
 namespace WpfProyectoBD
 {
     /// <summary>
-    /// Lógica de interacción para UserWindow.xaml
+    /// Lógica de interacción para SolicitudesRecibidas.xaml
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class SolicitudesRecibidas : Window
     {
-        public UserWindow()
+        public SolicitudesRecibidas()
         {
             InitializeComponent();
-        }
-
-        private void lblAdmin_Click(object sender, RoutedEventArgs e)
-        {
-            new MainWindow().Show();
-            this.Close();
-        }
-
-        private void btnSOLICITUD_Click(object sender, RoutedEventArgs e)
-        {
-            new Solicitud().Show();
         }
     }
 }
