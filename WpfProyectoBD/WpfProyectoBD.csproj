@@ -59,6 +59,7 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Solicitud.cs" />
     <Compile Include="Solicitud.xaml.cs">
       <DependentUpon>Solicitud.xaml</DependentUpon>
     </Compile>

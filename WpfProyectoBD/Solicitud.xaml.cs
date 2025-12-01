@@ -26,7 +26,7 @@ namespace WpfProyectoBD
             InitializeComponent();
         }
 
-        private readonly string rutaArchLogin = "C:\\signupPrueba\\solicitudes.txt";
+        private readonly string rutaArchSolicitudes = "C:\\signupPrueba\\solicitudes.txt";
 
         private void btnENVSOLICITUD_Click(object sender, RoutedEventArgs e)
         {
@@ -46,8 +46,8 @@ namespace WpfProyectoBD
 
             try
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(rutaArchLogin));
-                File.AppendAllText(rutaArchLogin, datosParaGuardar, Encoding.UTF8);
+                Directory.CreateDirectory(Path.GetDirectoryName(rutaArchSolicitudes));
+                File.AppendAllText(rutaArchSolicitudes, datosParaGuardar, Encoding.UTF8);
 
                 MessageBox.Show ($"{txtNombre.Text}, su solicitud ha sido recibida, gracias.");
                 this.Close();

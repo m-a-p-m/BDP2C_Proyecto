@@ -157,7 +157,8 @@ namespace WpfProyectoBD
 
         private void btnSOLICITUDES_Click(object sender, RoutedEventArgs e)
         {
-
+            SolicitudesRecibidas SolRec = new SolicitudesRecibidas();
+            SolRec.Show();
         }
     }
 }
