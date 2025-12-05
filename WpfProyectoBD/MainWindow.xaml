@@ -45,6 +45,8 @@
                         Content=" i n i c i a r  s e s i o n " Click="btnENTRAR_Click"/>
                 <Button x:Name="btnREGISTRARSE"
                         Content=" r e g i s t r a r s e " Click="btnREGISTRARSE_Click"/>
+                <Button x:Name="btnVOLVER"
+                        Content="v o l v e r" Click="btnVOLVER_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

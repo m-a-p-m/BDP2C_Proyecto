@@ -107,5 +107,12 @@ namespace WpfProyectoBD
             winSingUp.Show();
             this.Close();
         }
+
+        private void btnVOLVER_Click(object sender, RoutedEventArgs e)
+        {
+            UserWindow usrWin = new UserWindow();
+            usrWin.Show();
+            this.Close();
+        }
     }
 }

@@ -97,9 +97,8 @@ namespace WpfProyectoBD
 
         private void btnVISTAUSUARIO_Click(object sender, RoutedEventArgs e)
         {
-            UserWindow usrWin = new UserWindow();
-            usrWin.Show();
-            this.Close();
+            UserList usrLst = new UserList();
+            usrLst.Show();
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)

@@ -32,7 +32,7 @@
                 <Button x:Name="btnCERRAR"
                         Content=" c e r r a r  s e s i o n " Click="btnCERRAR_Click"/>
                 <Button x:Name="btnVISTAUSUARIO"
-                        Content=" u s u a r i o " Click="btnVISTAUSUARIO_Click"/>
+                        Content=" u s u a r i o s" Click="btnVISTAUSUARIO_Click"/>
                 <Button x:Name="btnSOLICITUDES"
                         Content=" s o l i c i t u d e s " Click="btnSOLICITUDES_Click"/>
             </StackPanel>
