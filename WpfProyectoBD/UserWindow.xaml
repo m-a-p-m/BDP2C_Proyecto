@@ -25,17 +25,11 @@
                 </Image.Source>
             </Image>
             <Button x:Name="btnMenu"
-                   Content="v a p o r  ltd."
-                   FontSize="8"/>
-            <Button x:Name="btnSobre"
-                  Content="u b i c a c i o n e s"
-                  FontSize="8"/>
-            <Button x:Name="btnProd"
-                  Content="p r o d u c t o s."
-                  FontSize="8"/>
+                    Content="v a p o r  ltd."
+                    FontSize="8"/>
             <Button x:Name="btnAdmin"
-                  Content="a d m i n"
-                  FontSize="8" Click="lblAdmin_Click"/>
+                    Content="a d m i n"
+                    FontSize="8" Click="lblAdmin_Click"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
@@ -45,39 +39,39 @@
                 </Image.Source>
             </Image>
             <Label x:Name="lblLOGIN"
-                   Content="V A P O R  LTD."/>
+                   Content="V A P O R  LTD."/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Background="#9500ff">
             <Label x:Name="lblCARRU"
-                   Content="compre nuestros productos: "/>
-            <StackPanel Orientation="Horizontal">
-                <Image Height="121" Width="204">
+                   Content="Compruebe nuestros servicios! "/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Image Height="130" Width="230">
                     <Image.Source>
-                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/clases.jpg"/>
                     </Image.Source>
                 </Image>
-                <Image Height="121" Width="204">
+                <StackPanel>
+                        <Label x:Name="lblClases"
+                            Content="Clases y Eventos!"/>
+                    <Label x:Name="lblClases2"
+                           Content="Puede reservar haciendo solicitud!"/>
+                </StackPanel>
+                <Image Height="130" Width="230">
                     <Image.Source>
-                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
+                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/eventos.jpg"/>
                     </Image.Source>
                 </Image>
-                <Image Height="121" Width="204">
-                    <Image.Source>
-                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
-                    </Image.Source>
-                </Image>
-                <Image Height="121" Width="204">
-                    <Image.Source>
-                        <BitmapImage DecodePixelWidth="323" DecodePixelHeight="389" UriSource="img/logo.png"/>
-                    </Image.Source>
-                </Image>
+
+
+
             </StackPanel>
         </StackPanel>
 
         <Button x:Name="btnSOLICITUD"
                 Grid.Row="3"
-                Content="h a c e r  s o l i c i t u d" Click="btnSOLICITUD_Click"/>
+                Content="h a c e r  s o l i c i t u d" Click="btnSOLICITUD_Click" Margin="0,20,0,20" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>

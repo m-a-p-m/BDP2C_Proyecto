@@ -55,10 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Clases.cs" />
+    <Compile Include="Eventos.cs" />
     <Compile Include="Servicio.cs" />
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServicioPadre.cs" />
     <Compile Include="Solicitud.cs" />
     <Compile Include="Solicitud.xaml.cs">
       <DependentUpon>Solicitud.xaml</DependentUpon>
@@ -144,6 +147,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\bgVapor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\clases.jpg" />
+    <Resource Include="img\eventos.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,3 +27,32 @@ C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\SolicitudesRecib
 C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\SolicitudesRecibidas.baml
 C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\UserList.g.cs
 C:\Users\mae\source\repos\WpfProyectoBD\WpfProyectoBD\obj\Debug\UserList.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\bin\Debug\WpfProyectoBD.exe.config
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\bin\Debug\WpfProyectoBD.exe
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\bin\Debug\WpfProyectoBD.pdb
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD.csproj.AssemblyReference.cache
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD.exe.config
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\MainWindow.g.cs
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\Register.g.cs
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\Solicitud.g.cs
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\SolicitudesRecibidas.g.cs
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\UserList.g.cs
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\UserWindow.g.cs
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\Welcome.g.cs
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\App.g.cs
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD_MarkupCompile.cache
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD_MarkupCompile.lref
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\App.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\MainWindow.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\Register.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\Solicitud.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\SolicitudesRecibidas.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\UserList.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\UserWindow.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\Welcome.baml
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD.g.resources
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD.Properties.Resources.resources
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD.csproj.GenerateResource.cache
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD.csproj.CoreCompileInputs.cache
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD.exe
+C:\Users\mae\Downloads\Nueva carpeta (8)\BDP2C_Proyecto-master\BDP2C_Proyecto-master\WpfProyectoBD\obj\Debug\WpfProyectoBD.pdb
