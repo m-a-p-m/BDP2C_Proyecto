@@ -12,12 +12,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace WpfProyectoBD
 {
     public partial class UserList : Window
     {
-        private readonly string rutaArchLogin = "C:\\signupPrueba\\signupPrueba2.txt";
+        private readonly string rutaArchLogin = "C:\\signupPrueba\\signup.txt";
 
         public List<Usuario> ListaUsuarios { get; set; }
 
@@ -61,7 +62,16 @@ namespace WpfProyectoBD
             }
             else
             {
-                MessageBox.Show("Archivo de usuarios no encontrado.", "Advertencia");
+                try
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(rutaArchLogin));
+                    File.WriteAllText(rutaArchLogin, string.Empty);
+                    MessageBox.Show("Archivo de usuarios no encontrado. Se ha creado un archivo vacío para futuros registros.", "Información");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Advertencia: Archivo de usuarios no encontrado, y hubo un error al intentar crearlo: {ex.Message}", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
         }
 
@@ -90,14 +100,21 @@ namespace WpfProyectoBD
             if (UsuarioSeleccionado != null)
             {
                 MessageBoxResult result = MessageBox.Show($"¿Está seguro de que desea eliminar al usuario: {UsuarioSeleccionado.Nombre}?",
-                                                          "Confirmar Eliminación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                                                         "Confirmar Eliminación", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    ListaUsuarios.Remove(UsuarioSeleccionado);
-                    GuardarUsuarios();
-                    lvUsuarios.Items.Refresh();
-                    MessageBox.Show("Usuario eliminado exitosamente.", "Éxito");
+                    try
+                    {
+                        ListaUsuarios.Remove(UsuarioSeleccionado);
+                        GuardarUsuarios();
+                        lvUsuarios.Items.Refresh();
+                        MessageBox.Show("Usuario eliminado exitosamente.", "Éxito");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al intentar eliminar el usuario: {ex.Message}", "Error de Eliminación", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
             else

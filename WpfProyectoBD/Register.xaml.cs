@@ -17,9 +17,6 @@ using Path = System.IO.Path;
 
 namespace WpfProyectoBD
 {
-    /// <summary>
-    /// Lógica de interacción para Register.xaml
-    /// </summary>
     public partial class Register : Window
     {
         public Register()
@@ -27,7 +24,7 @@ namespace WpfProyectoBD
             InitializeComponent();
         }
 
-        private readonly string rutaArchLogin = "C:\\signupPrueba\\signupPrueba2.txt";
+        private readonly string rutaArchLogin = "C:\\signupPrueba\\signup.txt";
 
         private void btnCREARCUENTA_Click(object sender, RoutedEventArgs e)
         {

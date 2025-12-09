@@ -8,7 +8,14 @@ namespace WpfProyectoBD
 {
     public class SolicitudData
     {
+        //PROPIEDADES
         public string Nombre { get; set; }
         public string Solicitud { get; set; }
+        //CONSTRUCTORES
+        public SolicitudData()
+        {
+            Nombre = "No definido";
+            Solicitud = "No definido";
+        }
     }
 }

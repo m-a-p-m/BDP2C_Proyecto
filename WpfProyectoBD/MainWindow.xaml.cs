@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace WpfProyectoBD
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -26,7 +23,7 @@ namespace WpfProyectoBD
             InitializeComponent();
         }
 
-        private readonly string rutaArchLogin = "C:\\signupPrueba\\signupPrueba2.txt";
+        private readonly string rutaArchLogin = "C:\\signupPrueba\\signup.txt";
 
         private void btnENTRAR_Click(object sender, RoutedEventArgs e)
         {

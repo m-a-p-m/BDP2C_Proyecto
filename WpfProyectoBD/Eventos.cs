@@ -4,18 +4,18 @@ namespace WpfProyectoBD
 {
     public class Eventos : Servicio
     {
-        //PROPIEDADES
+        //CONSTRUCTORES
         public Eventos() : base()
         {
             CatServ = "Evento";
         }
 
-        public Eventos(string nom, double prc, string hora, string fecha)
+        public Eventos(string nom, double prc, string hora, string fecha, string v)
             : base(nom, prc, "Evento", hora, fecha)
         {
         }
-        //FUNCIONALIDAD
 
+        //FUNCIONALIDAD
         public override string VerDatos()
         {
             return $"EVENTO: {base.VerDatos()}";

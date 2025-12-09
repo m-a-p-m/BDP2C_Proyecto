@@ -34,8 +34,17 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="Black"/>
         </Style>
-
         <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="MS Gothic"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="FontFamily" Value="MS Gothic"/>
+            <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
         </Style>
     </Application.Resources>

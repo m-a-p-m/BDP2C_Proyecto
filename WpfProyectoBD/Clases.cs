@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace WpfProyectoBD
+
 {
     public class Clases : Servicio
     {
@@ -9,6 +10,7 @@ namespace WpfProyectoBD
         {
             CatServ = "Clase";
         }
+
         public Clases(string nom, double prc, string hora, string fecha)
             : base(nom, prc, "Clase", hora, fecha)
         {

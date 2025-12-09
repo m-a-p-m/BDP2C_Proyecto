@@ -81,7 +81,14 @@
 
                 <StackPanel HorizontalAlignment="Center" Margin="10, 0">
                     <Label Content="Categoria" HorizontalAlignment="Center"/>
-                    <TextBox x:Name="txtCategoria" Foreground="Black" Text="{Binding servSel.CatServ, Mode=TwoWay}" Width="150" Height="30" HorizontalAlignment="Center"/>
+                    <ComboBox x:Name="cmbCategoria" 
+          Grid.Row="2" Grid.Column="1"
+          IsEditable="False"
+          SelectedItem="{Binding servSel.CatServ}">
+                        <ComboBoxItem>Clase</ComboBoxItem>
+                        <ComboBoxItem>Evento</ComboBoxItem>
+                        <ComboBoxItem>Servicio</ComboBoxItem>
+                    </ComboBox>
                 </StackPanel>
             </StackPanel>
 

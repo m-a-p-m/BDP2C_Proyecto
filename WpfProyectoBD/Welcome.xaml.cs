@@ -27,11 +27,11 @@ namespace WpfProyectoBD
 
         private void CargarServicios()
         {
+            ListaServ.Clear();
             if (File.Exists(rutaArchLogin))
             {
                 try
                 {
-                    ListaServ.Clear();
                     string[] lineas = File.ReadAllLines(rutaArchLogin);
                     foreach (string linea in lineas)
                     {
@@ -39,18 +39,28 @@ namespace WpfProyectoBD
                         if (partes.Length >= 5)
                         {
                             string nombre = partes[0];
-
-                            // Precio puro (sin limpiar formato)
                             string precioPuro = partes[1].Trim();
-
                             string categoria = partes[2];
                             string hora = partes[3];
                             string fecha = partes[4];
 
-                            // Se intenta parsear el precio tal cual viene en el archivo
                             if (double.TryParse(precioPuro, out double precio))
                             {
-                                ListaServ.Add(new Servicio(nombre, precio, categoria, hora, fecha));
+                                Servicio nuevoServicio;
+
+                                switch (categoria.ToUpper())
+                                {
+                                    case "EVENTO":
+                                        nuevoServicio = new Eventos(nombre, precio, hora, fecha, categoria);
+                                        break;
+                                    case "CLASE":
+                                        nuevoServicio = new Clases(nombre, precio, hora, fecha);
+                                        break;
+                                    default:
+                                        nuevoServicio = new Servicio(nombre, precio, categoria, hora, fecha);
+                                        break;
+                                }
+                                ListaServ.Add(nuevoServicio);
                             }
                         }
                     }
@@ -62,9 +72,19 @@ namespace WpfProyectoBD
             }
             else
             {
-                ListaServ.Add(new Servicio("REPARACION PC", 50.00, "Tecnologia", "10:00-12:00", "15/12/25"));
-                ListaServ.Add(new Servicio("CONSULTORIA BD", 120.00, "Informatica", "14:00-16:00", "16/12/25"));
-                GuardarServicios();
+                try
+                {
+                    ListaServ.Add(new Clases("CLASE NATACION", 60.00, "10:00-11:00", "01/01/26"));
+                    ListaServ.Add(new Eventos("FIESTA FIN DE AÑO", 150.00, "20:00-01:00", "31/12/25", "Evento"));
+                    ListaServ.Add(new Servicio("SERVICIO ALEATORIO", 120.00, "SERVICIO", "14:00-16:00", "16/12/25"));
+
+                    GuardarServicios();
+                    MessageBox.Show("Archivo de servicios no encontrado. Se ha creado con datos de ejemplo (incluyendo clases y eventos).", "Información");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Advertencia: Archivo de servicios no encontrado, y hubo un error al intentar crearlo con datos de ejemplo: {ex.Message}", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
         }
 
@@ -77,7 +97,6 @@ namespace WpfProyectoBD
                 StringBuilder sb = new StringBuilder();
                 foreach (Servicio s in ListaServ)
                 {
-                    // 🚨 Formato de guardado sin " Bs" ni ningún otro formato de moneda
                     sb.AppendLine($"{s.NomServ}|{s.PrecServ}|{s.CatServ}|{s.HoraServ}|{s.FechaServ}");
                 }
 
@@ -104,14 +123,21 @@ namespace WpfProyectoBD
         {
             if (servSel != null)
             {
-                ListaServ.Remove(servSel);
-                GuardarServicios();
+                try
+                {
+                    ListaServ.Remove(servSel);
+                    GuardarServicios();
 
-                txtPrecio.Clear();
-                txtProducto.Clear();
-                txtCategoria.Clear();
-                txtHora.Clear();
-                txtFecha.Clear();
+                    txtPrecio.Clear();
+                    txtProducto.Clear();
+                    txtHora.Clear();
+                    txtFecha.Clear();
+                    MessageBox.Show("Servicio eliminado exitosamente.", "Éxito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al intentar eliminar el servicio: {ex.Message}", "Error de Eliminación", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
             {
@@ -122,7 +148,12 @@ namespace WpfProyectoBD
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             string nombre = txtProducto.Text.Trim();
-            string categoria = txtCategoria.Text.Trim();
+            string categoria = string.Empty;
+
+                if (cmbCategoria.SelectedItem is ComboBoxItem item)
+                {
+                    categoria = item.Content.ToString();
+                }
             string hora = txtHora.Text.Trim();
             string fecha = txtFecha.Text.Trim();
 
@@ -139,7 +170,6 @@ namespace WpfProyectoBD
             }
 
             string patronHora = @"^([0-1][0-9]|2[0-3]):[0-5][0-9]-([0-1][0-9]|2[0-3]):[0-5][0-9]$";
-
             if (!Regex.IsMatch(hora, patronHora))
             {
                 MessageBox.Show("ERROR: El formato de Hora debe ser HH:MM-HH:MM (ej: 20:00-22:00).", "Error de Validación de Hora");
@@ -147,21 +177,42 @@ namespace WpfProyectoBD
             }
 
             string patronFecha = @"^\d{1,2}/\d{1,2}/\d{2}$";
-
             if (!Regex.IsMatch(fecha, patronFecha))
             {
                 MessageBox.Show("ERROR: El formato de Fecha debe ser D/M/YY (ej: 2/2/25 o 15/12/25).", "Error de Validación de Fecha");
                 return;
             }
 
-            ListaServ.Add(new Servicio(nombre, prec, categoria, hora, fecha));
-            GuardarServicios();
+            try
+            {
+                Servicio nuevoServicio;
 
-            txtPrecio.Clear();
-            txtProducto.Clear();
-            txtCategoria.Clear();
-            txtHora.Clear();
-            txtFecha.Clear();
+                switch (categoria.ToUpper())
+                {
+                    case "EVENTO":
+                        nuevoServicio = new Eventos(nombre, prec, hora, fecha, categoria);
+                        break;
+                    case "CLASE":
+                        nuevoServicio = new Clases(nombre, prec, hora, fecha);
+                        break;
+                    default:
+                        nuevoServicio = new Servicio(nombre, prec, categoria, hora, fecha);
+                        break;
+                }
+
+                ListaServ.Add(nuevoServicio);
+                GuardarServicios();
+
+                txtPrecio.Clear();
+                txtProducto.Clear();
+                txtHora.Clear();
+                txtFecha.Clear();
+                MessageBox.Show($"Servicio de tipo {nuevoServicio.CatServ} agregado exitosamente.", "Éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al intentar agregar el servicio: {ex.Message}", "Error de Adición", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
@@ -173,25 +224,26 @@ namespace WpfProyectoBD
             }
 
             string nombre = txtProducto.Text.Trim();
-            string categoria = txtCategoria.Text.Trim();
+            string categoria = string.Empty;
+            if (cmbCategoria.SelectedItem is ComboBoxItem item)
+            {
+                categoria = item.Content.ToString();
+            }
             string hora = txtHora.Text.Trim();
             string fecha = txtFecha.Text.Trim();
 
-            // Validación de Precio
             if (!double.TryParse(txtPrecio.Text, out double prec) || prec <= 0)
             {
                 MessageBox.Show("ERROR: El precio ingresado no es un número válido o debe ser mayor a cero.", "Error de Entrada");
                 return;
             }
 
-            // Validación de Campos Obligatorios (Nombre)
             if (string.IsNullOrEmpty(nombre))
             {
                 MessageBox.Show("ERROR: El nombre del servicio no puede estar vacío.", "Error de Validación");
                 return;
             }
 
-            // Validación de Hora
             string patronHora = @"^([0-1][0-9]|2[0-3]):[0-5][0-9]-([0-1][0-9]|2[0-3]):[0-5][0-9]$";
             if (!Regex.IsMatch(hora, patronHora))
             {
@@ -199,7 +251,6 @@ namespace WpfProyectoBD
                 return;
             }
 
-            // Validación de Fecha
             string patronFecha = @"^\d{1,2}/\d{1,2}/\d{2}$";
             if (!Regex.IsMatch(fecha, patronFecha))
             {
@@ -209,11 +260,25 @@ namespace WpfProyectoBD
 
             try
             {
-                // Reemplazar el objeto en la colección para forzar la actualización visual y usar el nuevo objeto para guardar
+                Servicio servicioEditado;
+
+                switch (categoria.ToUpper())
+                {
+                    case "EVENTO":
+                        servicioEditado = new Eventos(nombre, prec, hora, fecha, categoria);
+                        break;
+                    case "CLASE":
+                        servicioEditado = new Clases(nombre, prec, hora, fecha);
+                        break;
+                    default:
+                        servicioEditado = new Servicio(nombre, prec, categoria, hora, fecha);
+                        break;
+                }
+
                 int index = ListaServ.IndexOf(servSel);
                 if (index != -1)
                 {
-                    ListaServ[index] = new Servicio(nombre, prec, categoria, hora, fecha);
+                    ListaServ[index] = servicioEditado;
                     servSel = ListaServ[index];
                 }
 
@@ -236,7 +301,7 @@ namespace WpfProyectoBD
             {
                 txtProducto.Text = servSel.NomServ;
                 txtPrecio.Text = servSel.PrecServ.ToString();
-                txtCategoria.Text = servSel.CatServ;
+                cmbCategoria.Text = servSel.CatServ;
                 txtHora.Text = servSel.HoraServ;
                 txtFecha.Text = servSel.FechaServ;
             }

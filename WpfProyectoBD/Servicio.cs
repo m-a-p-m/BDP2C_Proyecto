@@ -2,16 +2,16 @@
 
 namespace WpfProyectoBD
 {
-    //PROPIEDADES
     public class Servicio
     {
+        //PROPIEDADES
         public string NomServ { get; set; }
         public double PrecServ { get; set; }
         public string CatServ { get; set; }
         public string HoraServ { get; set; }
         public string FechaServ { get; set; }
 
-    //CONSTRUCTORES
+        //CONSTRUCTORES
         public Servicio()
         {
             NomServ = "NO DEFINIDO";
@@ -30,7 +30,7 @@ namespace WpfProyectoBD
             FechaServ = fecha;
         }
 
-    //FUNCIONALIDAD
+        //FUNCIONALIDAD
         public virtual string VerDatos()
         {
             return $"{NomServ} | {PrecServ} | {CatServ} | {HoraServ} | {FechaServ}";
