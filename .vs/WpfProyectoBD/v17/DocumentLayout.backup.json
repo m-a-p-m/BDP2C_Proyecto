@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\wpfproyectobd\\solicitud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|solutionrelative:wpfproyectobd\\solicitud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|c:\\users\\mae\\source\\repos\\wpfproyectobd\\wpfproyectobd\\solicitudesrecibidas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|solutionrelative:wpfproyectobd\\solicitudesrecibidas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|c:\\users\\mae\\source\\repos\\wpfproyectobd\\wpfproyectobd\\userlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|solutionrelative:wpfproyectobd\\userlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|c:\\users\\mae\\source\\repos\\wpfproyectobd\\wpfproyectobd\\userlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|solutionrelative:wpfproyectobd\\userlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\wpfproyectobd\\solicitud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|solutionrelative:wpfproyectobd\\solicitud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|c:\\users\\mae\\source\\repos\\wpfproyectobd\\wpfproyectobd\\solicitudesrecibidas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|solutionrelative:wpfproyectobd\\solicitudesrecibidas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6032128C-AD30-4AF2-8631-C940CF6AF0A4}|WpfProyectoBD\\WpfProyectoBD.csproj|C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\wpfproyectobd\\welcome.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 267,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,20 +94,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "UserList.xaml.cs",
               "DocumentMoniker": "C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\WpfProyectoBD\\UserList.xaml.cs",
               "RelativeDocumentMoniker": "WpfProyectoBD\\UserList.xaml.cs",
               "ToolTip": "C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\WpfProyectoBD\\UserList.xaml.cs",
               "RelativeToolTip": "WpfProyectoBD\\UserList.xaml.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAkwGoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-05T13:45:15.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UserList.xaml",
               "DocumentMoniker": "C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\WpfProyectoBD\\UserList.xaml",
               "RelativeDocumentMoniker": "WpfProyectoBD\\UserList.xaml",
@@ -119,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SolicitudesRecibidas.xaml.cs",
               "DocumentMoniker": "C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\WpfProyectoBD\\SolicitudesRecibidas.xaml.cs",
               "RelativeDocumentMoniker": "WpfProyectoBD\\SolicitudesRecibidas.xaml.cs",
@@ -132,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Solicitud.cs",
               "DocumentMoniker": "C:\\Users\\mae\\source\\repos\\WpfProyectoBD\\WpfProyectoBD\\Solicitud.cs",
               "RelativeDocumentMoniker": "WpfProyectoBD\\Solicitud.cs",
