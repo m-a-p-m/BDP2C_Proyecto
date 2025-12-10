@@ -2,15 +2,15 @@
 
 namespace WpfProyectoBD
 {
-    public class Eventos : Servicio
+    public class Evento : Servicio
     {
         //CONSTRUCTORES
-        public Eventos() : base()
+        public Evento() : base()
         {
             CatServ = "Evento";
         }
 
-        public Eventos(string nom, double prc, string hora, string fecha, string v)
+        public Evento(string nom, double prc, string hora, string fecha, string v)
             : base(nom, prc, "Evento", hora, fecha)
         {
         }

@@ -25,6 +25,8 @@
         <Style TargetType="TextBox">
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="FontFamily" Value="MS Gothic"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="Black"/>
         </Style>
@@ -44,8 +46,17 @@
         </Style>
         <Style TargetType="ComboBoxItem">
             <Setter Property="FontFamily" Value="MS Gothic"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Background" Value="White"/>
             <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="FontFamily" Value="MS Gothic"/>
+        </Style>
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="MS Gothic"/>
         </Style>
     </Application.Resources>
 </Application>

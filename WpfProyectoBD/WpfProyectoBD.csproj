@@ -55,8 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Clases.cs" />
-    <Compile Include="Eventos.cs" />
+    <Compile Include="Clase.cs" />
+    <Compile Include="Evento.cs" />
     <Compile Include="Servicio.cs" />
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>

@@ -57,7 +57,7 @@ namespace WpfProyectoBD
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al cargar los usuarios: {ex.Message}", "Error de Carga", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Error al cargar los usuarios: {ex.Message}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -66,11 +66,11 @@ namespace WpfProyectoBD
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(rutaArchLogin));
                     File.WriteAllText(rutaArchLogin, string.Empty);
-                    MessageBox.Show("Archivo de usuarios no encontrado. Se ha creado un archivo vacío para futuros registros.", "Información");
+                    MessageBox.Show("Archivo de usuarios no encontrado. Se ha creado un archivo vacío para futuros registros.", "INFORMACIÓN");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Advertencia: Archivo de usuarios no encontrado, y hubo un error al intentar crearlo: {ex.Message}", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show($"Archivo de usuarios no encontrado, y hubo un error al intentar crearlo: {ex.Message}", "ADVERTENCIA", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -89,7 +89,7 @@ namespace WpfProyectoBD
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar los usuarios: {ex.Message}", "Error de Guardado", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error al guardar los usuarios: {ex.Message}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -100,7 +100,7 @@ namespace WpfProyectoBD
             if (UsuarioSeleccionado != null)
             {
                 MessageBoxResult result = MessageBox.Show($"¿Está seguro de que desea eliminar al usuario: {UsuarioSeleccionado.Nombre}?",
-                                                         "Confirmar Eliminación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                                                         "CONFIRMAR ELIMINACIÓN", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {
@@ -109,17 +109,17 @@ namespace WpfProyectoBD
                         ListaUsuarios.Remove(UsuarioSeleccionado);
                         GuardarUsuarios();
                         lvUsuarios.Items.Refresh();
-                        MessageBox.Show("Usuario eliminado exitosamente.", "Éxito");
+                        MessageBox.Show("Usuario eliminado exitosamente.", "ÉXITO");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error al intentar eliminar el usuario: {ex.Message}", "Error de Eliminación", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show($"Error al intentar eliminar el usuario: {ex.Message}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un usuario para eliminar.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Debe seleccionar un usuario para eliminar.", "ADVERTENCIA", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         private void lvUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)

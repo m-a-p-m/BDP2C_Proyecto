@@ -3,15 +3,15 @@
 namespace WpfProyectoBD
 
 {
-    public class Clases : Servicio
+    public class Clase : Servicio
     {
         //CONSTRUCTORES
-        public Clases() : base()
+        public Clase() : base()
         {
             CatServ = "Clase";
         }
 
-        public Clases(string nom, double prc, string hora, string fecha)
+        public Clase(string nom, double prc, string hora, string fecha)
             : base(nom, prc, "Clase", hora, fecha)
         {
         }

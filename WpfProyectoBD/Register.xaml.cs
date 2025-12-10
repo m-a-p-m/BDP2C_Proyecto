@@ -26,11 +26,46 @@ namespace WpfProyectoBD
 
         private readonly string rutaArchLogin = "C:\\signupPrueba\\signup.txt";
 
+        private bool CorreoExiste(string email) //Verifica si el correo que el usuario intente registrar, no este ya en el archivo de signup.
+        {
+            if (!File.Exists(rutaArchLogin))
+            {
+                return false;
+            }
+
+            try
+            {
+                string[] lineas = File.ReadAllLines(rutaArchLogin, Encoding.UTF8);
+
+                foreach (string linea in lineas)
+                {
+                    string[] partes = linea.Split('|');
+
+                    if (partes.Length >= 2)
+                    {
+                        string correoExistente = partes[1].Trim();
+
+                        if (correoExistente.Equals(email.Trim(), StringComparison.OrdinalIgnoreCase))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al leer el archivo de registros: {ex.Message}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            return false;
+        }
+
         private void btnCREARCUENTA_Click(object sender, RoutedEventArgs e)
         {
             if (txtNOM.Text == "" || TxtEMAIL.Text == "" || pwdCONTRA.Password == "")
             {
-                lblMensaje.Content = "Debe llenar todos los campos obligatorios >:(";
+                lblMensaje.Content = "Debe llenar todos los campos obligatorios.";
                 lblMensaje.Foreground = Brushes.Red;
                 return;
             }
@@ -42,9 +77,16 @@ namespace WpfProyectoBD
                 return;
             }
 
-            if (pwdCONTRA.Password.Length <= 2)
+            if (txtNOM.Text.Length <= 3)
             {
-                lblMensaje.Content = "La contraseña debe tener más de 2 caracteres.";
+                lblMensaje.Content = "El nombre de usuario debe tener mas de 3 caracteres.";
+                lblMensaje.Foreground= Brushes.Red;
+                return;
+            }
+
+            if (pwdCONTRA.Password.Length <= 6)
+            {
+                lblMensaje.Content = "La contraseña debe tener más de 6 caracteres.";
                 lblMensaje.Foreground = Brushes.Red;
                 return;
             }
@@ -52,6 +94,13 @@ namespace WpfProyectoBD
             if (!Regex.IsMatch(TxtEMAIL.Text.Trim(), @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 lblMensaje.Content = "Ingrese una dirección de correo válida.";
+                lblMensaje.Foreground = Brushes.Red;
+                return;
+            }
+
+            if (CorreoExiste(TxtEMAIL.Text))
+            {
+                lblMensaje.Content = "El correo electrónico ya está registrado.";
                 lblMensaje.Foreground = Brushes.Red;
                 return;
             }

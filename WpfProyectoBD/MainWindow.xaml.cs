@@ -29,14 +29,14 @@ namespace WpfProyectoBD
         {
             if (TxtEMAIL.Text == "" || pwdCONTRA.Password == "")
             {
-                lblMensaje.Content = "Debe llenar todos los campos obligatorios >:(";
+                lblMensaje.Content = "Debe llenar todos los campos obligatorios.";
                 lblMensaje.Foreground = Brushes.Red;
                 return;
             }
 
             if (!TxtEMAIL.Text.Contains("@") || !TxtEMAIL.Text.Contains("."))
             {
-                lblMensaje.Content = "Ingrese un correo electrónico válido :c.";
+                lblMensaje.Content = "Ingrese un correo electrónico válido";
                 lblMensaje.Foreground = Brushes.Red;
                 return;
             }
@@ -46,7 +46,7 @@ namespace WpfProyectoBD
                 if (!File.Exists(rutaArchLogin))
                 {
                     lblMensaje.Foreground = Brushes.Red;
-                    lblMensaje.Content = "El archivo de usuarios no existe :C";
+                    lblMensaje.Content = "El archivo de usuarios no existe. Registrese para crear uno.";
                     return;
                 }
 
@@ -79,7 +79,7 @@ namespace WpfProyectoBD
                 if (encontrado)
                 {
                     lblMensaje.Foreground = Brushes.Green;
-                    lblMensaje.Content = "Acceso concedido. Bienvenido/a!";
+                    lblMensaje.Content = "Acceso concedido.";
                     Welcome winP = new Welcome();
                     winP.Show();
                     this.Close();
@@ -87,7 +87,7 @@ namespace WpfProyectoBD
                 else
                 {
                     lblMensaje.Foreground = Brushes.Red;
-                    lblMensaje.Content = "USUARIO NO AUTORIZADO. Credenciales incorrectas. >:A";
+                    lblMensaje.Content = "Credenciales incorrectas.";
                 }
             }
             catch (Exception ex)

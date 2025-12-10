@@ -51,10 +51,10 @@ namespace WpfProyectoBD
                                 switch (categoria.ToUpper())
                                 {
                                     case "EVENTO":
-                                        nuevoServicio = new Eventos(nombre, precio, hora, fecha, categoria);
+                                        nuevoServicio = new Evento(nombre, precio, hora, fecha, categoria);
                                         break;
                                     case "CLASE":
-                                        nuevoServicio = new Clases(nombre, precio, hora, fecha);
+                                        nuevoServicio = new Clase(nombre, precio, hora, fecha);
                                         break;
                                     default:
                                         nuevoServicio = new Servicio(nombre, precio, categoria, hora, fecha);
@@ -74,12 +74,12 @@ namespace WpfProyectoBD
             {
                 try
                 {
-                    ListaServ.Add(new Clases("CLASE NATACION", 60.00, "10:00-11:00", "01/01/26"));
-                    ListaServ.Add(new Eventos("FIESTA FIN DE AÑO", 150.00, "20:00-01:00", "31/12/25", "Evento"));
-                    ListaServ.Add(new Servicio("SERVICIO ALEATORIO", 120.00, "SERVICIO", "14:00-16:00", "16/12/25"));
+                    ListaServ.Add(new Clase("CLASE NATACION", 60.00, "10:00-11:00", "01/01/26"));//CLASES, CLASE HIJA
+                    ListaServ.Add(new Evento("FIESTA FIN DE AÑO", 150.00, "20:00-01:00", "31/12/25", "Evento")); //EVENTOS, CLASE HIJA
+                    ListaServ.Add(new Servicio("SERVICIO ALEATORIO", 120.00, "SERVICIO", "14:00-16:00", "16/12/25")); //SERVICIO, CLASE PADRE
 
                     GuardarServicios();
-                    MessageBox.Show("Archivo de servicios no encontrado. Se ha creado con datos de ejemplo (incluyendo clases y eventos).", "Información");
+                    MessageBox.Show("Archivo de servicios no encontrado. Se ha creado con datos de ejemplo.", "Información");
                 }
                 catch (Exception ex)
                 {
@@ -92,7 +92,7 @@ namespace WpfProyectoBD
         {
             try
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(rutaArchLogin));
+                Directory.CreateDirectory(Path.GetDirectoryName(rutaArchLogin)); //Por si no encuentra el archivo, esta linea lo crea.
 
                 StringBuilder sb = new StringBuilder();
                 foreach (Servicio s in ListaServ)
@@ -110,6 +110,8 @@ namespace WpfProyectoBD
 
         private void btnCERRAR_Click(object sender, RoutedEventArgs e)
         {
+            UserWindow usrWin = new UserWindow();
+            usrWin.Show();
             this.Close();
         }
 
@@ -132,16 +134,16 @@ namespace WpfProyectoBD
                     txtProducto.Clear();
                     txtHora.Clear();
                     txtFecha.Clear();
-                    MessageBox.Show("Servicio eliminado exitosamente.", "Éxito");
+                    MessageBox.Show("Servicio eliminado exitosamente.", "ÉXITO");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al intentar eliminar el servicio: {ex.Message}", "Error de Eliminación", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Error al intentar eliminar el servicio: {ex.Message}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un servicio para eliminar.", "Advertencia");
+                MessageBox.Show("Debe seleccionar un servicio para eliminar.", "ADVERTENCIA");
             }
         }
 
@@ -159,27 +161,27 @@ namespace WpfProyectoBD
 
             if (!double.TryParse(txtPrecio.Text, out double prec) || prec <= 0)
             {
-                MessageBox.Show("ERROR: El precio ingresado no es un número válido o debe ser mayor a cero.", "Error de Entrada");
+                MessageBox.Show("El precio ingresado no es un número válido o debe ser mayor a cero.", "ERROR");
                 return;
             }
 
             if (string.IsNullOrEmpty(nombre))
             {
-                MessageBox.Show("ERROR: El nombre del servicio no puede estar vacío.", "Error de Validación");
+                MessageBox.Show("El nombre del servicio no puede estar vacío.", "ERROR");
                 return;
             }
 
-            string patronHora = @"^([0-1][0-9]|2[0-3]):[0-5][0-9]-([0-1][0-9]|2[0-3]):[0-5][0-9]$";
+            string patronHora = @"^([0-1][0-9]|2[0-3]):[0-5][0-9]-([0-1][0-9]|2[0-3]):[0-5][0-9]$"; //FORMATO 20:00-22:00
             if (!Regex.IsMatch(hora, patronHora))
             {
-                MessageBox.Show("ERROR: El formato de Hora debe ser HH:MM-HH:MM (ej: 20:00-22:00).", "Error de Validación de Hora");
+                MessageBox.Show("El formato de Hora debe ser HH:MM-HH:MM (ej: 20:00-22:00).", "ERROR");
                 return;
             }
 
-            string patronFecha = @"^\d{1,2}/\d{1,2}/\d{2}$";
+            string patronFecha = @"^\d{1,2}/\d{1,2}/\d{2}$"; //FORMATO 2/2/25
             if (!Regex.IsMatch(fecha, patronFecha))
             {
-                MessageBox.Show("ERROR: El formato de Fecha debe ser D/M/YY (ej: 2/2/25 o 15/12/25).", "Error de Validación de Fecha");
+                MessageBox.Show("El formato de Fecha debe ser D/M/YY (ej: 2/2/25 o 15/12/25).", "ERROR");
                 return;
             }
 
@@ -190,10 +192,10 @@ namespace WpfProyectoBD
                 switch (categoria.ToUpper())
                 {
                     case "EVENTO":
-                        nuevoServicio = new Eventos(nombre, prec, hora, fecha, categoria);
+                        nuevoServicio = new Evento(nombre, prec, hora, fecha, categoria);
                         break;
                     case "CLASE":
-                        nuevoServicio = new Clases(nombre, prec, hora, fecha);
+                        nuevoServicio = new Clase(nombre, prec, hora, fecha);
                         break;
                     default:
                         nuevoServicio = new Servicio(nombre, prec, categoria, hora, fecha);
@@ -211,7 +213,7 @@ namespace WpfProyectoBD
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al intentar agregar el servicio: {ex.Message}", "Error de Adición", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error al intentar agregar el servicio: {ex.Message}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -219,7 +221,7 @@ namespace WpfProyectoBD
         {
             if (servSel == null)
             {
-                MessageBox.Show("Debe seleccionar un servicio de la lista para editar.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Debe seleccionar un servicio de la lista para editar.", "ADVERTENCIA", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
@@ -234,27 +236,27 @@ namespace WpfProyectoBD
 
             if (!double.TryParse(txtPrecio.Text, out double prec) || prec <= 0)
             {
-                MessageBox.Show("ERROR: El precio ingresado no es un número válido o debe ser mayor a cero.", "Error de Entrada");
+                MessageBox.Show("El precio ingresado no es un número válido o debe ser mayor a cero.", "ERROR");
                 return;
             }
 
             if (string.IsNullOrEmpty(nombre))
             {
-                MessageBox.Show("ERROR: El nombre del servicio no puede estar vacío.", "Error de Validación");
+                MessageBox.Show("El nombre del servicio no puede estar vacío.", "ERROR");
                 return;
             }
 
             string patronHora = @"^([0-1][0-9]|2[0-3]):[0-5][0-9]-([0-1][0-9]|2[0-3]):[0-5][0-9]$";
             if (!Regex.IsMatch(hora, patronHora))
             {
-                MessageBox.Show("ERROR: El formato de Hora debe ser HH:MM-HH:MM (ej: 20:00-22:00).", "Error de Validación de Hora");
+                MessageBox.Show("El formato de Hora debe ser HH:MM-HH:MM (ej: 20:00-22:00).", "ERROR");
                 return;
             }
 
             string patronFecha = @"^\d{1,2}/\d{1,2}/\d{2}$";
             if (!Regex.IsMatch(fecha, patronFecha))
             {
-                MessageBox.Show("ERROR: El formato de Fecha debe ser D/M/YY (ej: 2/2/25 o 15/12/25).", "Error de Validación de Fecha");
+                MessageBox.Show("El formato de Fecha debe ser D/M/YY (ej: 2/2/25 o 15/12/25).", "ERROR");
                 return;
             }
 
@@ -265,10 +267,10 @@ namespace WpfProyectoBD
                 switch (categoria.ToUpper())
                 {
                     case "EVENTO":
-                        servicioEditado = new Eventos(nombre, prec, hora, fecha, categoria);
+                        servicioEditado = new Evento(nombre, prec, hora, fecha, categoria);
                         break;
                     case "CLASE":
-                        servicioEditado = new Clases(nombre, prec, hora, fecha);
+                        servicioEditado = new Clase(nombre, prec, hora, fecha);
                         break;
                     default:
                         servicioEditado = new Servicio(nombre, prec, categoria, hora, fecha);
@@ -283,13 +285,12 @@ namespace WpfProyectoBD
                 }
 
                 GuardarServicios();
-
-                MessageBox.Show($"El servicio '{nombre}' ha sido editado correctamente.", "Edición Exitosa", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"El servicio '{nombre}' ha sido editado correctamente.", "EDICIÓN EXITOSA", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un error al intentar editar el servicio: {ex.Message}", "Error de Edición", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Ocurrió un error al intentar editar el servicio: {ex.Message}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
